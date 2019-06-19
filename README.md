@@ -23,6 +23,7 @@ All variables which can be overridden are stored in [defaults/main.yml](defaults
 
 | Name           | Default Value | Description                        |
 | -------------- | ------------- | -----------------------------------|
+| `file_server` | `https://github.com/prometheus/node_exporter/releases/download` | Location of the release artifacts. Required artifacts as hosted [here](https://github.com/prometheus/node_exporter/releases), should be available on the custom file server under `v<version_number>` directory. |
 | `node_exporter_version` | 0.17.0 | Node exporter package version. Also accepts latest as parameter. |
 | `node_exporter_web_listen_address` | "0.0.0.0:9100" | Address on which node exporter will listen |
 | `node_exporter_system_group` | "node-exp" | System group used to run node_exporter |

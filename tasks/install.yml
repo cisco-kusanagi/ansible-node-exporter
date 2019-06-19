@@ -8,6 +8,7 @@
   retries: 5
   delay: 2
   with_items: "{{ node_exporter_dependencies }}"
+  ignore_errors: yes
 
 - name: Create the node_exporter group
   group:
@@ -30,7 +31,7 @@
 - name: Download node_exporter binary to local folder
   become: false
   get_url:
-    url: "https://github.com/prometheus/node_exporter/releases/download/v{{ node_exporter_version }}/node_exporter-{{ node_exporter_version }}.linux-{{ go_arch }}.tar.gz"
+    url: "{{ file_server }}/v{{ node_exporter_version }}/node_exporter-{{ node_exporter_version }}.linux-{{ go_arch }}.tar.gz"
     dest: "/tmp/node_exporter-{{ node_exporter_version }}.linux-{{ go_arch }}.tar.gz"
     checksum: "sha256:{{ node_exporter_checksum }}"
   register: _download_binary
