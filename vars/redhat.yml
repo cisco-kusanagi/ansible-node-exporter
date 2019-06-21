@@ -2,3 +2,17 @@
 node_exporter_dependencies:
   - libselinux-python
   - policycoreutils-python
+
+## If internet is not available to install the above mentioned dependencies, then fetch them (and their dependencies) from the hosted file server
+offline_dependencies:
+  - "{{ file_server }}/libselinux-python-2.5-14.1.el7.x86_64.rpm"
+  - "{{ file_server }}/audit-libs-python-2.8.4-4.el7.x86_64.rpm"
+  - "{{ file_server }}/checkpolicy-2.5-8.el7.x86_64.rpm"
+  - "{{ file_server }}/libcgroup-0.41-20.el7.x86_64.rpm"
+  - "{{ file_server }}/libselinux-python-2.5-14.1.el7.x86_64.rpm"
+  - "{{ file_server }}/libsemanage-2.5-14.el7.x86_64.rpm"
+  - "{{ file_server }}/libsemanage-python-2.5-14.el7.x86_64.rpm"
+  - "{{ file_server }}/python-IPy-0.75-6.el7.noarch.rpm"
+  - "{{ file_server }}/setools-libs-3.3.8-4.el7.x86_64.rpm"
+  - "{{ file_server }}/policycoreutils-python-2.5-29.el7_6.1.x86_64.rpm"
+  - "{{ file_server }}/policycoreutils-python-2.5-29.el7.x86_64.rpm"
